@@ -1,6 +1,6 @@
 import React, { useState, Component } from 'react';
 import Video from 'react-native-video';
-import VideoPlayer from 'react-native-video-controls';
+import VideoPlayer from 'react-native-trambo-video-controls';
 import { Dropdown } from 'react-native-material-dropdown';
 
 import {

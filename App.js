@@ -13,6 +13,11 @@ import {
 
 
 export default function App() {
+  const [videoResolution, setVideoResolution] = useState('720p');
+
+  const inputResolution = resolution => {
+    setVideoResolution(resolution);
+  };
 
   let data = [{
       value: '360p',
@@ -20,11 +25,8 @@ export default function App() {
       value: '480p',
     }, {
       value: '720p',
-    }, {
-      value: '1080p'
     }];
 
-  let selected_resolution = '720p'
 
   return (
     <View style={{flex: 1}}>
@@ -34,13 +36,16 @@ export default function App() {
         <View style={{flex: 7, backgroundColor: 'skyblue'}} >
         <VideoPlayer
           style={styles.backgroundVideo}
-          source={{ uri: 'https://d295x101df47z9.cloudfront.net/bmx/bmx-'+selected_resolution+'.mp4' }}
+          source={{ uri: 'https://d295x101df47z9.cloudfront.net/bmx/bmx-'+videoResolution+'.mp4' }}
+          volume={1}
+          title={'BMX VIDEO'}
         />
         </View>
         <View style={{flex: 2, backgroundColor: 'powderblue'}} >
         <Dropdown
           label='Resolution'
           data={data}
+          onChangeText={inputResolution}
         />
         </View>
       </View>

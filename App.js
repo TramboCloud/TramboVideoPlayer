@@ -30,23 +30,20 @@ export default function App() {
 
   return (
     <View style={{flex: 1}}>
-        <View style={{flex: 1, backgroundColor: 'powderblue'}} >
-          <Text>TramboTube Premium</Text>
-        </View>
+        <View style={{flex: 1, backgroundColor: 'black'}} />
         <View style={{flex: 7, backgroundColor: 'skyblue'}} >
         <VideoPlayer
           style={styles.backgroundVideo}
-          source={{ uri: 'https://d295x101df47z9.cloudfront.net/bmx/bmx-'+videoResolution+'.mp4' }}
+          disableVolume={true}
+          videoPrefix={'https://d295x101df47z9.cloudfront.net/bmx/bmx-'}
+          videoResolutions={data}
+          videoDefaultResolution={"360p"}
+          videoExtension={".mp4"}
           volume={1}
-          title={'BMX VIDEO'}
         />
         </View>
-        <View style={{flex: 2, backgroundColor: 'powderblue'}} >
-        <Dropdown
-          label='Resolution'
-          data={data}
-          onChangeText={inputResolution}
-        />
+        <View style={{flex: 2, backgroundColor: 'black'}} >
+
         </View>
       </View>
   );
